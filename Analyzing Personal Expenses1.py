@@ -1,4 +1,5 @@
-!pip install pandas faker
+import sys
+!{sys.executable} -m pip install pandas faker
 
 import pandas as pd
 import random
@@ -83,4 +84,3 @@ for month in range(1, 13):  # Loop from January to December
 
 
 python generate_expense_data.py
-!pip install pandas faker streamlit
