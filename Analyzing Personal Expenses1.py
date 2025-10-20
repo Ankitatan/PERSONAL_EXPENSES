@@ -94,4 +94,4 @@ for month in range(1, 13):  # Loop from January to December
     print(f"[✓] {month_name} 2025 - {len(df)} records saved to {filename}")
 
 
-python generate_expense_data.py
+#python generate_expense_data.py
