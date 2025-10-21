@@ -1,6 +1,20 @@
 # generate_expense_data.py
-pip install pandas
-pip install Faker
+
+import sys
+import subprocess
+
+# Function to install a package if not already installed
+def install_package(package_name):
+    try:
+        __import__(package_name)
+    except ImportError:
+        print(f"[!] Package '{package_name}' not found. Installing...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+        print(f"[✓] Package '{package_name}' installed successfully.")
+
+# Auto-install required packages
+install_package("pandas")
+install_package("faker")
 
 import pandas as pd
 import random
@@ -82,7 +96,3 @@ for month in range(1, 13):  # Loop from January to December
     df.to_csv(filename, index=False)
 
     print(f"[✓] {month_name} 2025 - {len(df)} records saved to {filename}")
-
-
-python generate_expense_data.py
-streamlit run "Analyzing Personal Expenses1.py"
