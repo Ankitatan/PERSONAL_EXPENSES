@@ -1,5 +1,6 @@
 # generate_expense_data.py
-pip install pandas faker
+pip install pandas
+pip install Faker
 
 import pandas as pd
 import random
