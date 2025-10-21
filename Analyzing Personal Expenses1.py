@@ -1,4 +1,4 @@
-pip install -r requirements.txt
+#pip install -r requirements.txt
 
 
 
@@ -78,9 +78,9 @@ for month in range(1, 13):
 
 
 
-python generate_expense_data.py
+#python generate_expense_data.py
 
 
 
 
-streamlit run "Analyzing Personal Expenses1.py"
+#streamlit run "Analyzing Personal Expenses1.py"
