@@ -1,0 +1,11 @@
+streamlit
+pandas
+faker
+streamlit
+pandas
+numpy
+faker
+matplotlib
+seaborn
+sqlite3
+plotly
