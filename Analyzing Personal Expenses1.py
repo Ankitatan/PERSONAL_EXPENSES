@@ -10,6 +10,8 @@
 # The script can continue from here, assuming the packages are now installed
 #print("Packages installed successfully.")
 
+pip install faker
+streamlit run "Analyzing Personal Expenses1.py"
 
 
 import pandas as pd
