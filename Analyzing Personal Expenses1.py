@@ -1,20 +1,4 @@
-#import sys
-#import subprocess
-
-# Define the packages to be installed
-#packages = ["faker", "plotly"]
-
-# Use subprocess to run the pip install command
-#for package in packages:
-    #subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-# The script can continue from here, assuming the packages are now installed
-#print("Packages installed successfully.")
-
-#pip install pandas faker
-#streamlit run "Analyzing Personal Expenses1.py"
-
-pip install faker
-streamlit run "Analyzing Personal Expenses1.py"
+# generate_expense_data.py
 
 import pandas as pd
 import random
@@ -76,7 +60,7 @@ for month in range(1, 13):  # Loop from January to December
         cashback = round(random.uniform(0, amount * 0.1), 2) if random.random() < 0.3 else 0.0
 
         transaction = {
-            "Date": fake.date_between(start_date=datetime(year, month, 1), 
+            "Date": fake.date_between(start_date=datetime(year, month, 1),
                                       end_date=datetime(year, month, days_in_month)),
             "Category": category,
             "Payment_Mode": random.choice(payment_modes),
@@ -96,6 +80,3 @@ for month in range(1, 13):  # Loop from January to December
     df.to_csv(filename, index=False)
 
     print(f"[✓] {month_name} 2025 - {len(df)} records saved to {filename}")
-
-
-#python generate_expense_data.py
