@@ -1,20 +1,6 @@
-# generate_expense_data.py
+pip install -r requirements.txt
 
-import sys
-import subprocess
 
-# Function to install a package if not already installed
-def install_package(package_name):
-    try:
-        __import__(package_name)
-    except ImportError:
-        print(f"[!] Package '{package_name}' not found. Installing...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
-        print(f"[✓] Package '{package_name}' installed successfully.")
-
-# Auto-install required packages
-install_package("pandas")
-install_package("faker")
 
 import pandas as pd
 import random
@@ -27,17 +13,15 @@ import os
 # Setup
 # -----------------------------
 
-# Initialize Faker and random seed
 fake = Faker()
 random.seed(42)
 Faker.seed(42)
 
-# Output directory for CSV files
 output_dir = "monthly_expense_data"
 os.makedirs(output_dir, exist_ok=True)
 
 # -----------------------------
-# Define Expense Categories and Payment Modes
+# Expense Categories and Payment Modes
 # -----------------------------
 
 categories = {
@@ -56,23 +40,20 @@ categories = {
 payment_modes = ["Cash", "UPI", "Credit Card", "Debit Card", "Netbanking"]
 
 # -----------------------------
-# Generate Expense Data for Each Month
+# Generate Expense Data
 # -----------------------------
 
 year = 2025
 
-for month in range(1, 13):  # Loop from January to December
+for month in range(1, 13):
     month_data = []
     _, days_in_month = calendar.monthrange(year, month)
-
-    num_transactions = random.randint(80, 120)  # Number of transactions per month
+    num_transactions = random.randint(80, 120)
 
     for _ in range(num_transactions):
         category = random.choice(list(categories.keys()))
         min_amt, max_amt = categories[category]
         amount = round(random.uniform(min_amt, max_amt), 2)
-
-        # 30% chance to receive cashback
         cashback = round(random.uniform(0, amount * 0.1), 2) if random.random() < 0.3 else 0.0
 
         transaction = {
@@ -87,12 +68,19 @@ for month in range(1, 13):  # Loop from January to December
 
         month_data.append(transaction)
 
-    # Convert to DataFrame
     df = pd.DataFrame(month_data)
-
-    # Save CSV
     month_name = calendar.month_name[month]
     filename = f"{output_dir}/{month_name}_2025.csv"
     df.to_csv(filename, index=False)
-
     print(f"[✓] {month_name} 2025 - {len(df)} records saved to {filename}")
+
+
+
+
+
+python generate_expense_data.py
+
+
+
+
+streamlit run "Analyzing Personal Expenses1.py"
