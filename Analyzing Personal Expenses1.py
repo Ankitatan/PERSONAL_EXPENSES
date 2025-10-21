@@ -2,14 +2,14 @@ import sys
 import subprocess
 
 # Define the packages to be installed
-packages = ["pandas", "faker"]
+packages = ["faker", "plotly"]
 
 # Use subprocess to run the pip install command
 for package in packages:
-    # subprocess.check_call([sys.executable, "-m", "pip", "install", package])
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 # The script can continue from here, assuming the packages are now installed
 print("Packages installed successfully.")
+
 
 
 import pandas as pd
