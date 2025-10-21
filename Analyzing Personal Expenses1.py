@@ -13,6 +13,8 @@
 #pip install pandas faker
 #streamlit run "Analyzing Personal Expenses1.py"
 
+pip install faker
+streamlit run "Analyzing Personal Expenses1.py"
 
 import pandas as pd
 import random
