@@ -1,14 +1,14 @@
-import sys
-import subprocess
+#import sys
+#import subprocess
 
 # Define the packages to be installed
-packages = ["faker", "plotly"]
+#packages = ["faker", "plotly"]
 
 # Use subprocess to run the pip install command
-for package in packages:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+#for package in packages:
+    #subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 # The script can continue from here, assuming the packages are now installed
-print("Packages installed successfully.")
+#print("Packages installed successfully.")
 
 
 
