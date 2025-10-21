@@ -74,13 +74,5 @@ for month in range(1, 13):
     df.to_csv(filename, index=False)
     print(f"[✓] {month_name} 2025 - {len(df)} records saved to {filename}")
 
-
-
-
-
 #python generate_expense_data.py
-
-
-
-
-#streamlit run "Analyzing Personal Expenses1.py"
+ #streamlit run "Analyzing Personal Expenses1.py"
